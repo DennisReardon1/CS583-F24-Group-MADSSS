@@ -4,11 +4,11 @@
 ## Game Title: ...
 
 ## Group Members:
-Dennis Reardon
-Albert Ames
-Sheng-Chun Lim
-Sadia Abdirahim
-Sreehith Reddy Nareddy
-Mikko Benaso
+- Dennis Reardon
+- Albert Ames
+- Sheng-Chun Lim
+- Sadia Abdirahim
+- Sreehith Reddy Nareddy
+- Mikko Benaso
 
 
