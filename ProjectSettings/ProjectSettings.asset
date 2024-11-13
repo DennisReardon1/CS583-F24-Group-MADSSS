@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 3b9bd5f267a4c74409a6faca6fd4d583
+  productGUID: dc6f9d9816c00a54a8705a695abd71ed
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 3DProjectV001
+  productName: Project MADSSS
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -677,14 +677,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 3DProjectV001
+  metroPackageName: Project MADSSS
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 3DProjectV001
+  metroApplicationDescription: Project MADSSS
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -754,11 +754,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: cccc79ab-b237-4412-bd61-d4f9551721ab
+  cloudProjectId: 4809c8ae-9c49-4875-8aac-198fd7a83568
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 3DProjectV001
-  organizationId: dreardon6722
+  projectName: Project MADSSS
+  organizationId: mbenaso2796
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
