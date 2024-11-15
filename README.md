@@ -1,7 +1,7 @@
 # CS583-F24-Group-MADSSS
 # 3D game project by group: MADSSS
 
-## Game Title: ...
+## Game Title: Hero's Humiliation
 
 ## Group Members:
 - Dennis Reardon
