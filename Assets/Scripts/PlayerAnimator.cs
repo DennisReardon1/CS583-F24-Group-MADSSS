@@ -121,12 +121,8 @@ public class PlayerAnimator : MonoBehaviour
         {
             playerAnim55.SetBool("SPRJumpBool", false);
         }    
+        
 
-    }
 
-    //TODO: Code for death animation
-    public void TriggerDeathAnimation()
-    {
-        playerAnim55.SetTrigger("Death");
     }
 }
