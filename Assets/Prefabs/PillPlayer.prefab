@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 1615748280657975032}
   - component: {fileID: 2636172250491048023}
   - component: {fileID: 2994534441856781354}
+  - component: {fileID: 8319421429300778155}
   m_Layer: 0
   m_Name: PillPlayer
   m_TagString: Untagged
@@ -489,6 +490,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8319421429300778155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386203051555823281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51eeef0bf1b8a6240b5114f9e6f74fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!1001 &5154083285391410723
 PrefabInstance:
   m_ObjectHideFlags: 0
