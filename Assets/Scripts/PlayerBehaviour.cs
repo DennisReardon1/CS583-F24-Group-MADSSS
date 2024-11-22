@@ -30,11 +30,35 @@ public class PlayerBehaviour : MonoBehaviour
     private void PlayerGetHurt(int Damage){
         GameManager.gameManager.playerHealth.HurtMe(Damage);
         healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
+
+        //NEW: Play hurt animation whenever player takes damage
+        Animator animator = GetComponent<Animator>();
+        if(animator != null)
+        {
+            animator.SetTrigger("isHurt");
+        }
+
+        //NEW: Trigger PlayerDeath if HP reaches 0
+        if(GameManager.gameManager.playerHealth.Health <= 0)
+        {
+            PlayerDeath();
+        }
     }
 
     private void PlayerGetHealing(int Healing){
         GameManager.gameManager.playerHealth.HealMe(Healing);
         healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
+    }
+
+    //TODO: implement death animation
+    private void PlayerDeath()
+    {
+        Debug.Log("Player Has Died");
+        Animator animator = GetComponent<Animator>();
+        if(animator != null)
+        {
+            animator.SetTrigger("isDead");
+        }
     }
 
 
