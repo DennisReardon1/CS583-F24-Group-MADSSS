@@ -11,7 +11,7 @@ In Heros Humiliation you play as a hero that has been captured by the villain an
 - Sheng-Chun Lim = Player Health, Player UI, Trap Design
 - Sadia Abdirahim = Sound Design
 - Sreehith Reddy Nareddy = ___
-- Mikko Benaso = Player Animation and ___
+- Mikko Benaso = Player Death, Player Hurt Animations
 
 ## Group Members:
 - Dennis Reardon
