@@ -9,7 +9,7 @@ public class ProjectileController : MonoBehaviour
     private void Start()
     {
         
-        fireProjectile.SetTargetTF(GameObject.Find("PFTarget_Mesh").transform);
+        fireProjectile.SetTargetTF(GameObject.FindGameObjectWithTag("Player").transform);
     }
 
     // Update is called once per frame
