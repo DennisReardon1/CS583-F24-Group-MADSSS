@@ -43,6 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             PlayerDeath();
         }
+
     }
 
     private void PlayerGetHealing(int Healing){
