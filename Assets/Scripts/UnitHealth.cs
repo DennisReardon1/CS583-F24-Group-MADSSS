@@ -36,6 +36,10 @@ public class UnitHealth
         if(currHealth > 0){
             currHealth = currHealth - Damage;
         }
+        if (currHealth < 0)
+        {
+            currHealth = 0;
+        }
     }
 
 
@@ -48,4 +52,5 @@ public class UnitHealth
         }
     }
 
-}
+}//END
+
