@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] HealthBar healthBar;
-    private bool DeathStatus = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +31,6 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.gameManager.playerHealth.HurtMe(Damage);
         healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
 
-        if(DeathStatus) //NEW: conditional to make sure hurt animation doesn't overlap with death animation
-        {
-            return;
-        }
-
         //NEW: Play hurt animation whenever player takes damage
         //NOTE: May have to change this to apply to whenever player collides with 
         //environmental hazard
@@ -51,7 +45,6 @@ public class PlayerBehaviour : MonoBehaviour
         //NEW: Trigger PlayerDeath if HP reaches 0
         if(GameManager.gameManager.playerHealth.Health <= 0)
         {
-            DeathStatus = true;
             PlayerDeath();
         }
 
@@ -67,12 +60,38 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Debug.Log("Player Has Died");
         Animator animator = GetComponent<Animator>();
+        PlayerController playerController = GetComponent<PlayerController>();
+
+        if(playerController != null)
+        {
+            playerController.SetDead(true);
+        }
+
         if(animator != null)
         {
             Debug.Log("Playing Death animation...");
             animator.SetTrigger("isDead");
         }
     }
+
+    //NEW: implement respawn mechanic
+    //this should should theoretically re-enable movement since it resets the death and hurt trigger
+    public void Respawn()
+{
+    PlayerController playerController = GetComponent<PlayerController>();
+    Animator animator = GetComponent<Animator>();
+
+    if (playerController != null)
+    {
+        playerController.SetDead(false); // Mark the player as alive
+    }
+
+    if (animator != null)
+    {
+        animator.ResetTrigger("isDead"); // Reset death animation
+        animator.SetTrigger("Respawn");  // Optional: Play respawn animation
+    }
+}
 
 
 }
