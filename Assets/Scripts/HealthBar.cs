@@ -19,6 +19,7 @@ public class HealthBar : MonoBehaviour
         healthSlider34.value = MaxyHealth;
     }
 
+
     public void SetHealth(int Health)
     {
         healthSlider34.value = Health;
