@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] HealthBar healthBar;
+    private bool DeathStatus = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +32,26 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.gameManager.playerHealth.HurtMe(Damage);
         healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
 
+        if(DeathStatus) //NEW: conditional to make sure hurt animation doesn't overlap with death animation
+        {
+            return;
+        }
+
         //NEW: Play hurt animation whenever player takes damage
+        //NOTE: May have to change this to apply to whenever player collides with 
+        //environmental hazard
         Animator animator = GetComponent<Animator>();
         if(animator != null)
         {
+            
+            Debug.Log("Got hurt");
             animator.SetTrigger("isHurt");
         }
 
         //NEW: Trigger PlayerDeath if HP reaches 0
         if(GameManager.gameManager.playerHealth.Health <= 0)
         {
+            DeathStatus = true;
             PlayerDeath();
         }
 
@@ -58,6 +69,7 @@ public class PlayerBehaviour : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         if(animator != null)
         {
+            Debug.Log("Playing Death animation...");
             animator.SetTrigger("isDead");
         }
     }
