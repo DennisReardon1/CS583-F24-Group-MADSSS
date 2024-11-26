@@ -27,7 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
          }
     }
 
-    private void PlayerGetHurt(int Damage){
+    public void PlayerGetHurt(int Damage){
         GameManager.gameManager.playerHealth.HurtMe(Damage);
         healthBar.SetHealth(GameManager.gameManager.playerHealth.Health);
 
@@ -43,7 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             PlayerDeath();
         }
-
+        Debug.Log("PlayerGetHurt");
     }
 
     private void PlayerGetHealing(int Healing){
@@ -61,6 +61,16 @@ public class PlayerBehaviour : MonoBehaviour
             animator.SetTrigger("isDead");
         }
     }
-
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "FireTrap")
+        {
+            PlayerDeath();
+        }
+        if (collider.tag == "SpikeTrap")
+        {
+            PlayerGetHurt(40);
+        }
+    }
 
 }
