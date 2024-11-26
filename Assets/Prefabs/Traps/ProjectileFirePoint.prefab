@@ -4930,7 +4930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576254940246514844}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9888916, z: -0, w: 0.14863871}
+  m_LocalRotation: {x: 0, y: -0.9888917, z: 0, w: 0.14863794}
   m_LocalPosition: {x: 0, y: 1.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4976,7 +4976,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7fb56870d4215cb4a838c3e6d5090906, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5050,7 +5050,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5073,6 +5073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireProjectile: {fileID: 7756084609958646223}
+  fireCooldown: 0.5
 --- !u!1001 &1724722177809549533
 PrefabInstance:
   m_ObjectHideFlags: 0
