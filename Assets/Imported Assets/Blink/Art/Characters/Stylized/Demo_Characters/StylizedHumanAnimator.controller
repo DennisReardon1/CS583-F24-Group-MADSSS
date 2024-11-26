@@ -180,7 +180,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 2
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1101 &-7584710551550277509
@@ -721,7 +721,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1101 &-1681163208107719256
@@ -1239,7 +1239,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HurtState
+  m_Name: isHurt
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1498,7 +1498,7 @@ AnimatorStateMachine:
     m_Position: {x: -370, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2219749968588771809}
-    m_Position: {x: -620, y: -70, z: 0}
+    m_Position: {x: -670, y: -60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7642100083138678112}
@@ -1674,7 +1674,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Death
+  m_Name: isDead
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

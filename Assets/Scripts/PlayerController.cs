@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 Looking;
     public float LookRotation;
     public bool grounded;
+    public bool dead; //NEW: is dead checker
     public bool SprintingNow;
 
 
@@ -101,6 +102,17 @@ public class PlayerController : MonoBehaviour
 
     public void SetGrounded(bool state){
         grounded = state;
+    }
+
+    //NEW: is dead state checker, similar to is grounded state check
+        public void SetDead(bool state)
+    {
+        dead = state;
+    }
+
+    public bool IsDead()
+    {
+        return dead;
     }
     
 }
