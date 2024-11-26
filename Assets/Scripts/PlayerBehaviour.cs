@@ -89,7 +89,6 @@ public class PlayerBehaviour : MonoBehaviour
     if (animator != null)
     {
         animator.ResetTrigger("isDead"); // Reset death animation
-        animator.SetTrigger("Respawn");  // Optional: Play respawn animation
     }
 }
 
