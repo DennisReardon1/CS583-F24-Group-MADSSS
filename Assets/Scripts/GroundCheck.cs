@@ -6,6 +6,8 @@ public class GroundCheck : MonoBehaviour
 {
 
     public PlayerController playerController22;
+    //turning off this code piece until we feel we need it in again.
+    // || playerController22.IsDead()
 
     private void OnTriggerEnter(Collider other){
         if(other.gameObject == playerController22.gameObject)

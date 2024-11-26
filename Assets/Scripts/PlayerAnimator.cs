@@ -10,9 +10,14 @@ public class PlayerAnimator : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void awake(){
-        playerAnim55 = GetComponent<Animator>();
-        playerController = GetComponent<PlayerController>();
+    void Awake(){
+
+        //i initially wanted to do it this way but apparently i get an error if i try doing this.
+        //so either leave this alone or prepare to bugfix why the script cannot find these two while
+        //they are turned on. for now it defaults to exactly what we needed so leave it alone if you can.
+
+        //playerAnim55 = GetComponent<Animator>();
+        //playerController = GetComponent<PlayerController>();
     }
 
     void Start()
@@ -23,8 +28,19 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Health check for the DeadDead boolean inside animator
+        if (GameManager.gameManager.playerHealth.Health > 0)
+        {
+            playerAnim55.SetBool("DeadDead", false);    
+        }
+        else
+        {
+            playerAnim55.SetBool("DeadDead", true);
+        }
         
-        //code for walking
+
+        //code for walking without sprinting
         if (Input.GetKey(KeyCode.W))
         {
             playerAnim55.SetBool("Wforward", true);
@@ -64,7 +80,7 @@ public class PlayerAnimator : MonoBehaviour
         }
 
         
-        //code for sprinting
+        //code for sprinting either idle or walking
         if (Input.GetKey(KeyCode.W) && playerController.SprintingNow == true)
         {
             playerAnim55.SetBool("SPRforward", true);
