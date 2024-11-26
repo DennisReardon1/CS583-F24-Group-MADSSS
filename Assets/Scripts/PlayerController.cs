@@ -7,12 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public GameObject CameraHolder;
-    public Vector2 Moving;
-    public Vector2 Looking;
-    public float LookRotation;
-    public bool grounded;
-    public bool dead; //NEW: is dead checker
-    public bool SprintingNow;
+    public Vector2 Moving;//needed to see/move
+    public Vector2 Looking;//needed to see/move
+    public float LookRotation;//needed to see/move
+
+    public bool grounded; //is the player touching a floor surface
+    public bool dead = false; //will the player show himself dying
+    public bool SprintingNow; //is the player sprinting
 
 
     [SerializeField] public float Speed = 5f;
@@ -109,10 +110,12 @@ public class PlayerController : MonoBehaviour
     {
         dead = state;
     }
-
+    
+    /*
     public bool IsDead()
     {
         return dead;
     }
-    
-}
+    */
+
+}//END

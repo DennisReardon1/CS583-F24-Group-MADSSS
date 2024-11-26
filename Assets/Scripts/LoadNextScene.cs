@@ -14,6 +14,7 @@ public class LoadNextScene : MonoBehaviour
         {
             // Load the specified scene
             SceneManager.LoadScene(next_level);
+            
         }
     } 
 }
