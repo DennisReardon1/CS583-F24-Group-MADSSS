@@ -8,6 +8,11 @@ public class PlayerAnimator : MonoBehaviour
     public Animator playerAnim55;
     public PlayerController playerController;
 
+    // Footstep variables
+    public AudioSource footstepsSound;
+    public AudioSource runstep;
+
+
 
     // Start is called before the first frame update
     void Awake(){
@@ -22,7 +27,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -138,7 +143,28 @@ public class PlayerAnimator : MonoBehaviour
             playerAnim55.SetBool("SPRJumpBool", false);
         }    
         
+        // Footstep logic
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || 
+            Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && playerController.grounded)
+            {
+                footstepsSound.enabled = true;
+            }
+            else
+            {
+                footstepsSound.enabled = false;
+            }
+        if((Input.GetKey(KeyCode.W) && playerController.SprintingNow == true || Input.GetKey(KeyCode.A) && playerController.SprintingNow == true || 
+            Input.GetKey(KeyCode.S) && playerController.SprintingNow == true || Input.GetKey(KeyCode.D ) && playerController.SprintingNow == true) && playerController.grounded)
+            {
+                runstep.enabled = true;
+                footstepsSound.enabled = false;
+            }
+            else
+            {
+                runstep.enabled = false;
+            }
 
 
     }
+    
 }
