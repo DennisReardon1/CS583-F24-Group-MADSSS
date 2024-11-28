@@ -11,7 +11,9 @@ public class PlayerAnimator : MonoBehaviour
     // Footstep variables
     public AudioSource footstepsSound;
     public AudioSource runstep;
-
+    //code for death grunt vvv
+    public AudioSource deathsound;
+    private bool hasPlayedDeathSound = false;
 
 
     // Start is called before the first frame update
@@ -37,11 +39,19 @@ public class PlayerAnimator : MonoBehaviour
         // Health check for the DeadDead boolean inside animator
         if (GameManager.gameManager.playerHealth.Health > 0)
         {
-            playerAnim55.SetBool("DeadDead", false);    
+            playerAnim55.SetBool("DeadDead", false);  
+            //code for death grunt 
+            hasPlayedDeathSound = false; 
         }
         else
         {
             playerAnim55.SetBool("DeadDead", true);
+            //code for death grunt 
+            if (!hasPlayedDeathSound)
+            {
+                deathsound.Play();
+                hasPlayedDeathSound = true;
+            }
         }
         
 
