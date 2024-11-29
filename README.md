@@ -10,7 +10,7 @@ In Heros Humiliation you play as a hero that has been captured by the villain an
 - Dennis Reardon = Player Movement, Player Movement Animation, Player Health, Player UI, Villain design and voicework, Github Maintenance
 - Albert Ames = Level Design, Sound Design
 - Sheng-Chun Lim = Player Health, Player UI, Trap Design and Mechanics
-- Sadia Abdirahim = 
+- Sadia Abdirahim = Level design, Traps
 - Sreehith Reddy Nareddy = Level Design
 - Mikko Benaso = Player Death and Hurt Animation and Mechanics, Respawn Mechanics
 
