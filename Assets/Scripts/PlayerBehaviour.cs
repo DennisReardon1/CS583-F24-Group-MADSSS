@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] HealthBar healthBar;
+    [SerializeField] private Transform RespawnPoint; //NEW: Respawn point for player
+    [SerializeField] private Transform PlayerStartingPos;
     public Animator playerAnim55;
     public PlayerController playerController;
 
@@ -28,6 +30,12 @@ public class PlayerBehaviour : MonoBehaviour
             PlayerGetHealing(20);
             Debug.Log(GameManager.gameManager.playerHealth.Health);
          }
+         //NEW: Respawn player when pressing R
+         if (Input.GetKeyDown(KeyCode.R))
+         {
+            Respawn();
+            Debug.Log("Player Respawned");
+         }
     }
 
     public void PlayerGetHurt(int Damage){
@@ -43,26 +51,6 @@ public class PlayerBehaviour : MonoBehaviour
         //you got hurt but not dead yet.
         playerAnim55.SetTrigger("isHurt");
 
-        //code that is no longer needed to animate getting hit and dying.
-        /*
-        //NEW: Play hurt animation whenever player takes damage
-        //NOTE: May have to change this to apply to whenever player collides with 
-        //environmental hazard
-        Animator animator = GetComponent<Animator>();
-        if(animator != null)
-        {
-            
-            Debug.Log("Got hurt");
-            animator.SetTrigger("isHurt");
-        }
-        //NEW: Trigger PlayerDeath if HP reaches 0
-        if(GameManager.gameManager.playerHealth.Health <= 0)
-        {
-            PlayerDeath();
-        }
-        Debug.Log("PlayerGetHurt");
-        */
-
     }//PlayerGetHurt
 
     private void PlayerGetHealing(int Healing){
@@ -76,47 +64,23 @@ public class PlayerBehaviour : MonoBehaviour
 
     }//PlayerGetHealing
 
-    
-    //this isnt needed anymore, if you want player to die just use the playergethurt method. - Dennis
-    /*
-    private void PlayerDeath()
-    {
-        Debug.Log("Player Has Died");
-        Animator animator = GetComponent<Animator>();
-        PlayerController playerController = GetComponent<PlayerController>();
-        if(playerController != null)
-        {
-            playerController.SetDead(true);
-        }
-        if(animator != null)
-        {
-            Debug.Log("Playing Death animation...");
-            animator.SetTrigger("isDead");
-        }
-    }
-    */
-    
-
-    //MIKKO
-    //this should should theoretically re-enable movement since it resets the death and hurt trigger
-    //turning this off shortterm until the branch merges and hit/deaths is patched. - Dennis
-    /*
     public void Respawn()
     {
-        PlayerController playerController = GetComponent<PlayerController>();
-        Animator animator = GetComponent<Animator>();
+        //Reset player health to full  
+        PlayerGetHealing(100);
 
-        if (playerController != null)
-        {
-            playerController.SetDead(false); // Mark the player as alive
-        }
+        //Reset player position to respawn point
+        PlayerStartingPos.transform.position = RespawnPoint.transform.position;
+        PlayerStartingPos.transform.rotation = RespawnPoint.transform.rotation;
 
-        if (animator != null)
-        {
-            animator.ResetTrigger("isDead"); // Reset death animation
-        }
+        //Reset animation triggers (testing, may be irrelevant)
+        playerAnim55.ResetTrigger("isDead");
+        playerAnim55.ResetTrigger("isHurt");
+
+        //Re-enable player control
+        playerController.SetDead(false);
+
     }
-    */
 
     //Sheng Trap Trigger if entering its space.
     private void OnTriggerEnter(Collider collider)
