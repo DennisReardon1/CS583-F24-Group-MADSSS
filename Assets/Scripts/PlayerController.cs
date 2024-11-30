@@ -110,12 +110,6 @@ public class PlayerController : MonoBehaviour
     {
         dead = state;
     }
-    
-    /*
-    public bool IsDead()
-    {
-        return dead;
-    }
-    */
+
 
 }//END
