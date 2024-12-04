@@ -357,7 +357,7 @@ MonoBehaviour:
   SprintMult: 1.5
   Sensitive: 0.2
   Maxforce: 1
-  JumpForce: 2.5
+  JumpForce: 3
 --- !u!114 &2994534441856781354
 MonoBehaviour:
   m_ObjectHideFlags: 0
