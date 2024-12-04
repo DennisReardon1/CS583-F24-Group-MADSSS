@@ -48,6 +48,14 @@ public class PlayerController : MonoBehaviour
 
     void Jump(){
         Vector3 JumpForces = Vector3.zero;
+
+        //dead players cannot move or lookaround. - Dennis
+        if (GameManager.gameManager.playerHealth.Health <= 0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         if(grounded){
             JumpForces = Vector3.up * JumpForce;
         }
@@ -55,6 +63,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move(){
+
+        //dead players cannot move or lookaround. - Dennis
+        if (GameManager.gameManager.playerHealth.Health <= 0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         //multiply the speed if sprinting
         float currSpeed;
         if (SprintingNow){
@@ -80,6 +96,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void Look(){
+
+        //dead players cannot move or lookaround. - Dennis
+        if (GameManager.gameManager.playerHealth.Health <= 0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         //turns the camera properly with mouse sensitivity
         transform.Rotate(Vector3.up * Looking.x * Sensitive);
         //use mouse to look arounf and limit how much
