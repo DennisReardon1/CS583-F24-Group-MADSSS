@@ -5,9 +5,10 @@ using UnityEngine;
 public class RespawnController : MonoBehaviour
 {
     [SerializeField] private Transform PillPlayer;
-    [SerializeField] private Transform RespawnPoint;
+    [SerializeField] public Transform RespawnPoint;
     void OnTriggerEnter(Collider other)
     {
+        
         PillPlayer.transform.position = RespawnPoint.transform.position;
     }
 }
