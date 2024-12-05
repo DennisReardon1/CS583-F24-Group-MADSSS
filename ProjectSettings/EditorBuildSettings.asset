@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestHealthUI.unity
     guid: b70dd73076d6912468598ca0d15179a9
+  - enabled: 1
+    path: Assets/Scenes/sreehith Level 3.unity
+    guid: e9537f049857e43cbbe83aa216e0be34
   m_configObjects: {}
