@@ -16,6 +16,11 @@ public class Menus : MonoBehaviour
     public void Level3(){
         SceneManager.LoadScene("sreehith Level 3");
     }   
+
+    public void Level4(){
+        SceneManager.LoadScene("Winner room Sadia");
+    } 
+
     public void QuitGame(){
         Application.Quit();
     }
