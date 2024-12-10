@@ -25,9 +25,14 @@ public class Menus : MonoBehaviour
         Application.Quit();
     }
 
+
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     /*
     public void TempA(){
-        SceneManager.LoadScene("TEMPA");
+        Cursor.lockState = CursorLockMode.Locked
     }
     */
 }
