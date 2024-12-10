@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 2994534441856781354}
   - component: {fileID: 8319421429300778155}
   - component: {fileID: 4764713908527448543}
+  - component: {fileID: 8082230852058918789}
   m_Layer: 0
   m_Name: PillPlayer
   m_TagString: Player
@@ -505,8 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  RespawnPoint: {fileID: 0}
-  PlayerStartingPos: {fileID: 94291870748057803}
+  respawnController: {fileID: 0}
   playerAnim55: {fileID: 6781803686834772664}
   playerController: {fileID: 2636172250491048023}
 --- !u!114 &4764713908527448543
@@ -536,6 +536,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8082230852058918789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386203051555823281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e99d33a980f8d6428e32dc18ab28e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PillPlayer: {fileID: 94291870748057803}
+  RespawnPoint: {fileID: 0}
 --- !u!1001 &5154083285391410723
 PrefabInstance:
   m_ObjectHideFlags: 0
