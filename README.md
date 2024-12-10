@@ -1,7 +1,7 @@
 # CS583-F24-Group-MADSSS
 # 3D game project by group: MADSSS
 
-## Game Title: Hero's Humiliation
+## Game Title: Heroes Humiliation
 
 # Game Description
 In Heros Humiliation you play as a hero that has been captured by the villain and has been made to go through a futile and humiliating Journey through levels curated by the villain with traps to humiliate the hero.
